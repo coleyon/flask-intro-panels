@@ -11,7 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const debug = (process.env.NODE_ENV !== 'production');
 
 // Development asset host (webpack dev server)
-const publicHost = debug ? 'http://0.0.0.0:2992' : '';
+const publicHost = debug ? 'http://127.0.0.1:5000' : '';
 
 const rootAssetPath = path.join(__dirname, 'assets');
 
@@ -38,6 +38,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     headers: { 'Access-Control-Allow-Origin': '*' },
+    disableHostCheck: true, // same to `flask.Flask.run(host=0.0.0.0)`
   },
   module: {
     rules: [

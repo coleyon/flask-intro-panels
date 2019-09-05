@@ -1,25 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sample</title>
+</head>
+<body>
 
-{% extends "nonlayout.html" %}
-{% block content %}
+  <h1 id="title-text">loading jQuery obj: NG</h1>
 
-<table id="table-1" cellspacing="0" cellpadding="2" border="1">
-    <tr id="1"><td>1</td><td>One</td><td>some text</td></tr>
-    <tr id="2"><td>2</td><td>Two</td><td>some text</td></tr>
-    <tr id="3"><td>3</td><td>Three</td><td>some text</td></tr>
-    <tr id="4"><td>4</td><td>Four</td><td>some text</td></tr>
-    <tr id="5"><td>5</td><td>Five</td><td>some text</td></tr>
-    <tr id="6"><td>6</td><td>Six</td><td>some text</td></tr>
-</table>
-
-{% endblock %}
-
+</body>
 {% block js %}
 {# <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> #}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    // Initialise the table
-    $("#table-1").tableDnD();
+    $("#title-text")[0].textContent = "loading jQuery obj: OK"
 });
 </script> 
 {% endblock %}
+
+</html>
